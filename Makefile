@@ -27,7 +27,7 @@ SRCS := source/main.cpp $(wildcard $(SRCDIR)/.cpp)
 all: tool $(TARGET)
 
 tool: $(SRCS) $(INCLUDES)
-	$(CXX) $(CXXFLAGS) $(SRCS) -o $(TARGET) $(LDLIBS) $(CXXFLAGS) $(LIBS)
+	$(CXX) $(CXXFLAGS) $(SRCS) -o $(TARGET) $(CXXFLAGS) $(LIBS)
 @echo "Compiled "$<" successfully!"
 
 clean:
