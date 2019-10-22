@@ -12,7 +12,7 @@ RM = rm -f
 
 HEADDIR := header
 
-SRCDIR := source/compress
+SRCDIR := source/log
 
 BINDIR := build/bin
 
@@ -27,7 +27,7 @@ SRCS := source/main.cpp $(wildcard $(SRCDIR)/.cpp)
 all: tool $(TARGET)
 
 tool: $(SRCS) $(INCLUDES)
-	$(CXX) $(CXXFLAGS) $(SRCS) -o $(TARGET) $(CXXFLAGS) $(LIBS)
+	$(CXX) $(CXXFLAGS) $(SRCS) -o $(TARGET) $(LIBS)
 @echo "Compiled "$<" successfully!"
 
 clean:

@@ -10,7 +10,7 @@
 #include<fstream>
 #include "zlib.h"
 #include<string>
-#include "prototype.h"
+#include "debug.h"
 using namespace std;
 
 int main()
