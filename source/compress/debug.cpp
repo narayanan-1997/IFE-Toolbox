@@ -2,7 +2,7 @@
 #include<string>
 #include<fstream>
 using namespace std;
-#include "prototype.h"
+#include "new_prototype.h"
 
 string file_name="test.txt";
 void debug_log(const string& message)

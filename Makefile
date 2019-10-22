@@ -1,17 +1,35 @@
-# This is a make file for area
+# This is a make file 
+
 CXX = g++
 
 CXXFLAGS = -std=c++0x -Wall -g
 
 LIBS = -lz
-#targets
 
-main: main.o debug.o compress.o
-	$(CXX) $(CXXFLAGS) main.o debug.o compress.o $(LIBS)
-	
-main.o: main.cpp prototype.h
-	$(CXX) $(CXXFLAGS) -c main.cpp prototype.h
-	
-debug.o: debug.cpp prototype.h
+RM = rm -f
 
-compress.o: compress.cpp prototype.h 
+#location
+
+HEADDIR := header
+
+SRCDIR := source/compress
+
+BINDIR := build/bin
+
+
+TARGET := $(BINDIR)/Logdata
+
+INCLUDES := $(wildcard $(HEADDIR)/.h)
+
+SRCS := source/main.cpp $(wildcard $(SRCDIR)/.cpp)
+
+
+all: tool $(TARGET)
+
+tool: $(SRCS) $(INCLUDES)
+$(CXX) $(CXXFLAGS) $(SRCS) -o $(TARGET) $(LDLIBS) $(CXXFLAGS) $(LIBS)
+@echo "Compiled "$<" successfully!"
+
+clean:
+$(RM) $(BINDIR)/Logdata
+@echo "Cleanup bin complete!"
