@@ -17,7 +17,7 @@ SRCDIR := source/compress
 BINDIR := build/bin
 
 
-TARGET := $(BINDIR)/Logdata
+TARGET := $(BINDIR)
 
 INCLUDES := $(wildcard $(HEADDIR)/.h)
 
@@ -27,9 +27,9 @@ SRCS := source/main.cpp $(wildcard $(SRCDIR)/.cpp)
 all: tool $(TARGET)
 
 tool: $(SRCS) $(INCLUDES)
-$(CXX) $(CXXFLAGS) $(SRCS) -o $(TARGET) $(LDLIBS) $(CXXFLAGS) $(LIBS)
+	$(CXX) $(CXXFLAGS) $(SRCS) -o $(TARGET) $(LDLIBS) $(CXXFLAGS) $(LIBS)
 @echo "Compiled "$<" successfully!"
 
 clean:
-$(RM) $(BINDIR)/Logdata
+	$(RM) $(BINDIR)
 @echo "Cleanup bin complete!"
