@@ -1,35 +1,29 @@
-# This is a make file 
+# MAKE FILE
 
+Make file ref:
 CXX = g++
-
-CXXFLAGS = -std=c++0x -Wall -g
-
-LIBS = -lz
-
 RM = rm -f
 
-#location
+HEADDIR = header/log_includes
+CXXFLAGS = -Wall -I$(HEADDIR)
+LDFLAGS = -std=c++11
+LDLIBS = -lz
 
-HEADDIR := header
+SRCDIR = source/log
+BINDIR = build/objects
+TARGET = $(BINDIR)
 
-SRCDIR := source/log
-
-BINDIR := build/bin
-
-
-TARGET := $(BINDIR)
-
-INCLUDES := $(wildcard $(HEADDIR)/.h)
-
-SRCS := source/main.cpp $(wildcard $(SRCDIR)/.cpp)
-
+INCLUDES = $(wildcard $(HEADDIR)/.h)
+SRCS = source/main.cpp $(wildcard $(SRCDIR)/.cpp)
 
 all: tool $(TARGET)
 
 tool: $(SRCS) $(INCLUDES)
-	$(CXX) $(CXXFLAGS) $(SRCS) -o $(TARGET) $(LIBS)
-@echo "Compiled "$<" successfully!"
+	$(CXX) $(LDFLAGS) $(SRCS) -o $(TARGET) $(LDLIBS) $(CXXFLAGS)
+	@echo "Compiled "$<" successfully!"
 
 clean:
-	$(RM) $(BINDIR)
-@echo "Cleanup bin complete!"
+	$(RM) $(BINDIR)/Objects
+	@echo "Cleanup bin complete!"
+
+
