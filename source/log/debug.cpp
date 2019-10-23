@@ -1,8 +1,10 @@
 #include<iostream>
 #include<string>
 #include<fstream>
-using namespace std;
 #include "compress.h"
+#include "debug.h"
+
+using namespace std;
 
 string file_name="test.txt";
 void debug_log(const string& message)

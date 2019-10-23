@@ -11,10 +11,10 @@ LDLIBS = -lz
 
 SRCDIR = source/log
 BINDIR = build/objects
-TARGET = $(BINDIR)
+TARGET = $(BINDIR)/logcompress
 
-INCLUDES = $(wildcard $(HEADDIR)/.h)
-SRCS = source/main.cpp $(wildcard $(SRCDIR)/.cpp)
+INCLUDES = $(wildcard $(HEADDIR)/*.h) 
+SRCS = source/main.cpp $(wildcard $(SRCDIR)/*.cpp) 
 
 all: tool $(TARGET)
 
@@ -23,7 +23,7 @@ tool: $(SRCS) $(INCLUDES)
 	@echo "Compiled "$<" successfully!"
 
 clean:
-	$(RM) $(BINDIR)/Objects
+	$(RM) $(BINDIR)/logcompress
 	@echo "Cleanup bin complete!"
 
 
