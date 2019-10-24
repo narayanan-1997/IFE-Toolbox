@@ -3,13 +3,11 @@
 #include<fstream>
 #include "compress_log.h"
 #include "input_log.h"
-
 using namespace std;
 
-string file_name = "test.txt";
 void debug_log(const string& message)
 {
-
+	const string file_name = "test.txt";
 	ofstream fout;
 	fout.open(file_name.c_str(),ios::app);
 	if(!fout)

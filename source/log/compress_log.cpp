@@ -2,6 +2,7 @@
 #include "zlib.h"
 #include<string>
 #include<fstream>
+#include "compress_log.h"
 using namespace std;
 
 void compress_file(const string & file_name)
