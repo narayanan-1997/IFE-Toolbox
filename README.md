@@ -1,0 +1,3 @@
+# IFE-Toolbox
+Input "Hello world" 3000 times and if size is greater than 8000 bytes create new compressed file (.gz) like file1.gz , file2.gz ... and 
+so on....
