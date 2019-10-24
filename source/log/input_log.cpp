@@ -1,12 +1,12 @@
 #include<iostream>
 #include<string>
 #include<fstream>
-#include "compress.h"
-#include "debug.h"
+#include "compress_log.h"
+#include "input_log.h"
 
 using namespace std;
 
-string file_name="test.txt";
+string file_name = "test.txt";
 void debug_log(const string& message)
 {
 
@@ -17,7 +17,7 @@ void debug_log(const string& message)
 	else
 	{
 		fout<<message;
-		if(fout.tellp()>8000)
+		if(fout.tellp() > 8000)
 		{
 			fout.close();
 			compress_file(file_name.c_str());

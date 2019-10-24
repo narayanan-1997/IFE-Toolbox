@@ -5,17 +5,10 @@
  *  Created on: 10-Oct-2019
  *      Author: chthp00109
  */
-#include <iostream>
-#include<cstring>
-#include<fstream>
-#include "zlib.h"
-#include<string>
-#include "debug.h"
-using namespace std;
-
+#include "debug_log.h"
 int main()
 {
-	for(unsigned int i=1;i<3000;i++)
+	for( unsigned int no_of_times = 1 ; no_of_times < 3000 ; no_of_times++ )
 		debug_log("Hello World!");
 	return 0;
 }

@@ -6,17 +6,17 @@ using namespace std;
 
 void compress_file(const string & file_name)
 {
-			string new_file_name="test";
-			static int new_file_suffix=1;
-			string new_file_extension=".gz";
+			string new_file_name = "test";
+			static int new_file_suffix = 1;
+			string new_file_extension = ".gz";
 
 
 			//////////////////////////////////
 
 
 			FILE * infile;
-			infile = fopen(file_name.c_str(),"r");
-			gzFile outfile = gzopen("compressed.gz","wb");
+			infile = fopen( file_name.c_str() , "r" );
+			gzFile outfile = gzopen("compressed.gz" , "wb" );
 			if (!infile || !outfile)
 				cout<<"Error";
 			char inbuffer[128];
