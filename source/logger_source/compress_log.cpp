@@ -19,10 +19,10 @@ void compress_file(const string & file_name)
 			if (!infile || !outfile)
 				cout<<"Error";
 			unsigned char *inbuffer = NULL;
-			unsigned char *inbuffer = new unsigned char[buffer_size];
+			inbuffer = new unsigned char[buffer_size];
 			int num_read = 0;
 			num_read = fread(inbuffer, 1, sizeof(inbuffer), infile);
-			if(num_read <= file_size)
+			if(num_read <= buffer_size)
 			{
 				gzwrite(outfile, inbuffer, num_read);
 			}
