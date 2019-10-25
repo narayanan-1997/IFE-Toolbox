@@ -6,7 +6,7 @@ using namespace std;
 
 void debug_log(const string& message)
 {
-	const int size_of_file = 8000;
+	const int size_of_file = 100000;
 	string file_name = "test.txt";
 	ofstream fout;
 	fout.open(file_name.c_str(),ios::app);
