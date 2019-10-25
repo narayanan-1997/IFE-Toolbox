@@ -1,5 +1,4 @@
 #include<iostream>
-#include<string>
 #include<fstream>
 #include "compress_log.h"
 #include "input_log.h"

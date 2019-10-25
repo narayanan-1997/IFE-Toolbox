@@ -4,12 +4,12 @@ Make file ref:
 CXX = g++
 RM = rm -f
 
-HEADDIR = header/log_includes
+HEADDIR = header/logger_header
 CXXFLAGS = -Wall -I$(HEADDIR)
 LDFLAGS = -std=c++11
 LDLIBS = -lz
 
-SRCDIR = source/log
+SRCDIR = source/logger_source
 BINDIR = build/objects
 TARGET = $(BINDIR)/logcompress
 

@@ -1,6 +1,5 @@
 #include<iostream>
 #include "zlib.h"
-#include<string>
 #include<fstream>
 #include "compress_log.h"
 using namespace std;
@@ -20,12 +19,11 @@ void compress_file(const string & file_name)
 			gzFile outfile = gzopen("compressed.gz" , "wb" );
 			if (!infile || !outfile)
 				cout<<"Error";
-			char inbuffer[128];
+			char inbuffer[100000];
 			int num_read = 0;
-			unsigned long total_read = 0;
-			while ((num_read = fread(inbuffer, 1, sizeof(inbuffer), infile)) > 0)
+			num_read = fread(inbuffer, 1, sizeof(inbuffer), infile);
+			if(num_read <= 100000)
 			{
-				total_read += num_read;
 				gzwrite(outfile, inbuffer, num_read);
 			}
 
