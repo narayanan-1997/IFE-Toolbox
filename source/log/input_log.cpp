@@ -3,11 +3,12 @@
 #include<fstream>
 #include "compress_log.h"
 #include "input_log.h"
+#define size_of_file 8000
 using namespace std;
 
 void debug_log(const string& message)
 {
-	const string file_name = "test.txt";
+	string file_name = "test.txt";
 	ofstream fout;
 	fout.open(file_name.c_str(),ios::app);
 	if(!fout)
@@ -15,7 +16,7 @@ void debug_log(const string& message)
 	else
 	{
 		fout<<message;
-		if(fout.tellp() > 8000)
+		if(fout.tellp() > size_of_file)
 		{
 			fout.close();
 			compress_file(file_name.c_str());
