@@ -17,7 +17,7 @@ void compress_file(const string & file_name)
 			gzFile outfile = gzopen("compressed.gz" , "wb" );
 			if (!infile || !outfile)
 				cout<<"Error";
-			char inbuffer[buffer_size];
+			char inbuffer[BUFFER_SIZE];
 			int num_read = 0;
 			num_read = fread(inbuffer, 1, sizeof(inbuffer), infile);
 			gzwrite(outfile, inbuffer, num_read);

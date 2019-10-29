@@ -1,5 +1,5 @@
 #include<string>
-const int buffer_size = 100000;
+const int BUFFER_SIZE = 100000;
 /// compress_log is a header file which defines the
 /// prototype for the function compress_file in the main.
 
