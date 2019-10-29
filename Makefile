@@ -24,6 +24,7 @@ tool: $(SRCS) $(INCLUDES)
 
 clean:
 	$(RM) $(BINDIR)/logcompress
+	$(RM) *.gz *.txt
 	@echo "Cleanup bin complete!"
 
 
