@@ -14,7 +14,7 @@ void debug_log(const string & message)
 		cout<<"Cannot open file"<<endl;
 	else
 	{
-		if(fout.tellp() + strlen(message.c_str())  < buffer_size)
+		if(fout.tellp() + strlen(message.c_str())  < BUFFER_SIZE)
 		{
 			fout<<message;
 			
